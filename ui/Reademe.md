@@ -7,7 +7,8 @@
 
 ## 环境依赖
 
-- Winform/WPF/XAML
+- html+ejs
+- nodejs+express
 
 ## 部署步骤
 
