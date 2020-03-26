@@ -10,12 +10,10 @@
 <body>
   <h1>欢迎来到XX大学办公自动化聊天系统！</h1>
   <h2><%= message%></h2>
-  <div id="butt">
-    <button class="but" onclick="document.getElementById('register').style.display='block'">Register
+    <button class="but" onclick="document.getElementById('register').style.display='block'">注册
     </button>
-    <button class="but" onclick="document.getElementById('login').style.display='block'">Login
+    <button class="but" onclick="document.getElementById('login').style.display='block'">登录
     </button>
-  </div>
   <!--登录界面-->
   <div id="login" class="modal">
     <form class="model-content animate" action="/login" method="post">
@@ -25,12 +23,12 @@
         <img src="https://static.runoob.com/images/mix/img_avatar.png" alt="Avatar" class="avatar">
       </div>
       <div class="container">
-        <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="username" required>
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required>
-        <button type="submit" class="bbb">Login</button>
-        <input type="checkbox" checked="checked"> Remember me
+        <label><b>用户名</b></label>
+        <input type="text" placeholder="输入用户名" name="username" required>
+        <label><b>密码</b></label>
+        <input type="password" placeholder="输入密码" name="password" required>
+        <button type="submit" class="bbb">登录</button>
+        <input type="checkbox" checked="checked"> 记住我
       </div>
     </form>
   </div>
@@ -43,14 +41,14 @@
         <img src="https://static.runoob.com/images/mix/img_avatar.png" alt="Avatar" class="avatar">
       </div>
       <div class="container">
-        <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="username" onkeyup="findinDB()" required>
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" id="pwd1" name="password" required>
-        <label><b>Password Verify</b></label>
-        <input type="password" placeholder="Enter Password Again" id="pwd2" name="password2" onkeyup="validate()" required>
-        <button type="submit" class="bbb" id="submits">Register</button>
-        <button id="resett" class="bbb" type="reset">Reload</button>
+        <label><b>用户名</b></label>
+        <input type="text" placeholder="输入用户名" name="username" onkeyup="findinDB()" required>
+        <label><b>密码</b></label>
+        <input type="password" placeholder="输入密码" id="pwd1" name="password" required>
+        <label><b>确认密码</b></label>
+        <input type="password" placeholder="再次输入密码" id="pwd2" name="password2" onkeyup="validate()" required>
+        <button type="submit" class="bbb" id="submits">注册</button>
+        <button id="resett" class="bbb" type="reset">重新输入</button>
       </div>
       <span id="tishi"></span>
     </form>
@@ -58,9 +56,11 @@
 </body>
 </html>
 <script>
+    //注册时判断用户名是否已被注册 
     function findinDB(){
       //TODO:与后端数据库连接，查询用户名是否存在
     }
+    //注册时判断两次密码输入是否相同
     function validate() {
            var pwd1 = document.getElementById("pwd1").value;
            var pwd2 = document.getElementById("pwd2").value;
